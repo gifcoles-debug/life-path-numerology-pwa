@@ -60,6 +60,27 @@ small { color: #697487; font-weight: 400; }
 .number-card strong { display: block; margin: .7rem 0; font-family: var(--serif); font-size: 2.9rem; line-height: 1; }
 .number-card p { font-size: .8rem; }
 
+.full-report { margin-top: 4.5rem; }
+.report-intro { display: grid; grid-template-columns: 1fr minmax(16rem,.62fr); align-items: end; gap: 2.5rem; margin-bottom: 1.25rem; }
+.report-intro h2 { margin: .6rem 0 0; font-size: clamp(2rem,4vw,3.6rem); letter-spacing: -.065em; }
+.report-intro > p { max-width: 23rem; margin: 0 0 .3rem auto; color: var(--soft); font-size: .86rem; }
+.report-map { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.report-map > div { min-height: 8.4rem; padding: 1rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,253,248,.48); }
+.report-map span, .report-map small { display: block; color: var(--soft); font-size: .69rem; }
+.report-map strong { display: block; margin: .35rem 0; color: var(--copper); font-family: var(--serif); font-size: 2.6rem; line-height: 1; }
+.report-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+.report-card { min-height: 16rem; padding: clamp(1.25rem,3vw,2rem); border: 1px solid var(--line); background: rgba(255,253,248,.6); }
+.report-card-accent { background: #f1e4d0; }
+.report-card h3, .integration-plan h3 { margin: .6rem 0 1rem; font-size: clamp(1.35rem,2.2vw,1.85rem); letter-spacing: -.045em; }
+.report-card p { margin: .8rem 0 0; color: var(--soft); font-size: .86rem; line-height: 1.8; }
+.report-card p + p { padding-top: .8rem; border-top: 1px solid var(--line); }
+.integration-plan { margin-top: 1rem; padding: clamp(1.25rem,3vw,2rem); border: 1px solid var(--ink); background: var(--ink); color: var(--white); }
+.integration-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+.integration-steps > div { padding-top: .8rem; border-top: 1px solid rgba(255,253,248,.28); }
+.integration-steps b { color: #d2a46d; font-size: .75rem; letter-spacing: .1em; }
+.integration-steps p { margin: .5rem 0 0; color: rgba(255,253,248,.85); font-size: .82rem; line-height: 1.75; }
+.report-boundary { margin: 1.2rem 0 0; color: rgba(255,253,248,.66); font-size: .73rem; line-height: 1.7; }
+
 .audit, .reflection { margin-top: 1rem; border: 1px solid var(--line); background: var(--white); }
 .audit h3, .reflection h3 { margin: 0; padding: 1rem 1.15rem; border-bottom: 1px solid var(--line); font-size: 1.25rem; }
 .audit-grid { display: grid; grid-template-columns: repeat(2,1fr); }
@@ -91,6 +112,12 @@ footer { padding: 1.5rem max(1rem,env(safe-area-inset-right)) calc(1.5rem + env(
   .section-heading h2 { margin: .45rem 0 1.2rem; font-size: clamp(1.85rem,8.5vw,2.35rem); }
   .form-grid, .overview, .audit-grid { grid-template-columns: 1fr; }
   .number-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+
+  .report-intro { grid-template-columns: 1fr; gap: 1rem; }
+  .report-intro > p { max-width: none; margin: 0; }
+  .report-map { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .report-grid { grid-template-columns: 1fr; }
+  .integration-steps { grid-template-columns: 1fr; gap: .9rem; }
   .number-card { min-height: 11.5rem; padding: 1rem .85rem; }
   .number-card strong { font-size: 2.55rem; }
   .life-number { min-height: 10.5rem; font-size: clamp(5.25rem,28vw,7.5rem); }
