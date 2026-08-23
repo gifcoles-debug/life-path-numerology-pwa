@@ -1,11 +1,20 @@
 {
+  "id": "./",
   "name": "生命靈數｜本地離線版",
   "short_name": "生命靈數",
   "description": "完全在本機瀏覽器運算的生命靈數自我探索工具。",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#f7f0e3",
   "theme_color": "#101a2b",
   "lang": "zh-Hant",
-  "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "categories": ["lifestyle", "utilities"],
+  "prefer_related_applications": false,
+  "icons": [
+    {"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"},
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
 }
