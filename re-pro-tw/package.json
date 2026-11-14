@@ -1,0 +1,26 @@
+{
+  "name": "re-pro-tw",
+  "version": "0.1.0",
+  "private": true,
+  "description": "不動產最強工具：台灣房仲、地政士、開發商的會員制整合資訊平台",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server.js",
+    "create-admin": "node --disable-warning=ExperimentalWarning scripts/create-admin.js",
+    "demo-data": "node --disable-warning=ExperimentalWarning scripts/demo-data.js",
+    "check-links": "node --disable-warning=ExperimentalWarning scripts/run-job.js linkcheck",
+    "update-news": "node --disable-warning=ExperimentalWarning scripts/run-job.js news",
+    "import-lvr": "node --disable-warning=ExperimentalWarning scripts/run-job.js lvr",
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.js'"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.1",
+    "chart.js": "^4.6.1",
+    "express": "^4.22.3",
+    "fast-xml-parser": "^5.12.1"
+  }
+}

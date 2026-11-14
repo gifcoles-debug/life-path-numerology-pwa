@@ -1,0 +1,1030 @@
+{
+  "version": "2026-11-14",
+  "note": "本檔就是整個平台的框架：每個模組 = 一個主題頁；每個連結都標註來源可信度、取得方式、更新頻率與費用。新增資源只要改這個檔案，系統每天會自動做「連結確認」。",
+  "trustLevels": {
+    "official": "官方一手",
+    "industry": "業者／公會",
+    "research": "研究機構",
+    "media": "媒體報導"
+  },
+  "accessTypes": {
+    "link": "外部連結",
+    "open-data": "開放資料（可自動下載）",
+    "rss": "RSS（可自動抓取）",
+    "api": "API（可串接）",
+    "paid": "付費服務"
+  },
+  "modules": [
+    {
+      "id": "market",
+      "icon": "📈",
+      "title": "房價與實價登錄",
+      "status": "live",
+      "summary": "房價走勢、成交量、價格指數。站內「房價走勢」頁會自動匯入內政部實價登錄開放資料，計算各縣市、行政區的單價中位數。",
+      "analysis": [
+        "單價中位數（萬/坪）月趨勢：看漲跌方向，比平均數不易被豪宅拉高",
+        "成交件數：量先價行，量縮通常領先價格修正",
+        "25%～75% 區間：看價格分散程度，判斷個案是否偏離行情",
+        "預售屋 vs 中古屋價差：判斷新案溢價"
+      ],
+      "groups": [
+        {
+          "title": "官方實價登錄與統計",
+          "items": [
+            {
+              "name": "內政部不動產交易實價查詢服務網",
+              "url": "https://lvr.land.moi.gov.tw/",
+              "desc": "全台買賣、預售屋、租賃實價登錄查詢，最權威的成交資料",
+              "trust": "official",
+              "access": "link",
+              "update": "每月 1、11、21 日",
+              "cost": "免費"
+            },
+            {
+              "name": "實價登錄開放資料下載",
+              "url": "https://plvr.land.moi.gov.tw/DownloadOpenData",
+              "desc": "本平台自動匯入的資料來源（CSV 壓縮檔，可依季別回補）",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每月 1、11、21 日",
+              "cost": "免費"
+            },
+            {
+              "name": "內政部不動產資訊平台",
+              "url": "https://pip.moi.gov.tw/",
+              "desc": "住宅價格指數、移轉棟數、住宅存量、房價負擔能力等統計",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每季／每月",
+              "cost": "免費"
+            },
+            {
+              "name": "政府資料開放平臺",
+              "url": "https://data.gov.tw/",
+              "desc": "搜尋「實價登錄」「地價」「建照」等各機關開放資料集",
+              "trust": "official",
+              "access": "open-data",
+              "update": "依資料集",
+              "cost": "免費"
+            },
+            {
+              "name": "住宅價格指數（地政司不動產指數專區）",
+              "url": "https://www.land.moi.gov.tw/chhtml/news/1125",
+              "desc": "內政部全國與六都住宅價格指數，排除特殊交易的官方指數",
+              "trust": "official",
+              "access": "link",
+              "update": "每季（約季後 4.5 個月）",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "民間房價指數與行情",
+          "items": [
+            {
+              "name": "信義房價指數",
+              "url": "https://www.sinyinews.com.tw/quarterly",
+              "desc": "以信義房屋成交資料編製的中古屋價格季指數（另有大台北月指數）",
+              "trust": "industry",
+              "access": "link",
+              "update": "每季",
+              "cost": "免費"
+            },
+            {
+              "name": "國泰房地產指數",
+              "url": "https://www.cathay-red.com.tw/tw/About/House",
+              "desc": "新推個案（預售、新成屋）可能成交價、銷售率等指標，國泰建設與政大研究團隊合作編製（季報 PDF）",
+              "trust": "research",
+              "access": "link",
+              "update": "每季",
+              "cost": "免費"
+            },
+            {
+              "name": "591 實價登錄",
+              "url": "https://market.591.com.tw/",
+              "desc": "以社區、建案整理實價登錄與房價地圖，查同社區行情最快",
+              "trust": "industry",
+              "access": "link",
+              "update": "每旬",
+              "cost": "免費"
+            },
+            {
+              "name": "樂居",
+              "url": "https://www.leju.com.tw/",
+              "desc": "社區／建案實價與行情整理",
+              "trust": "industry",
+              "access": "link",
+              "update": "每旬",
+              "cost": "免費"
+            },
+            {
+              "name": "5168 實價登錄比價王",
+              "url": "https://price.houseprice.tw/",
+              "desc": "實價登錄揭露到門牌、社區行情與待售物件比價",
+              "trust": "industry",
+              "access": "link",
+              "update": "每旬",
+              "cost": "免費"
+            },
+            {
+              "name": "政大永慶房價指數",
+              "url": "https://rer.yungching.com.tw/",
+              "desc": "政大與永慶合作編製，含即時指數與大樓、公寓分類指數",
+              "trust": "research",
+              "access": "link",
+              "update": "每季",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "listings",
+      "icon": "🏘️",
+      "title": "房仲平台與物件資訊",
+      "status": "links",
+      "summary": "各大房仲品牌與刊登平台的最新售屋、出租、新建案資訊。先以連結整合，未來視各平台授權再做物件彙整。",
+      "analysis": [
+        "開價 vs 實價登錄成交價：議價空間",
+        "同區物件刊登數變化：供給壓力",
+        "新建案推案量與開價：預售市場熱度"
+      ],
+      "groups": [
+        {
+          "title": "刊登平台",
+          "items": [
+            {
+              "name": "591 房屋交易網",
+              "url": "https://www.591.com.tw/",
+              "desc": "全台最大租售刊登平台",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "591 新建案",
+              "url": "https://newhouse.591.com.tw/",
+              "desc": "預售屋、新成屋建案資訊",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "樂屋網",
+              "url": "https://www.rakuya.com.tw/",
+              "desc": "售屋、租屋、新建案刊登",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "好房網",
+              "url": "https://www.housefun.com.tw/",
+              "desc": "房屋買賣刊登與房產新聞",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "房仲品牌",
+          "items": [
+            {
+              "name": "信義房屋",
+              "url": "https://www.sinyi.com.tw/",
+              "desc": "直營房仲，物件與成交行情",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "永慶房屋",
+              "url": "https://www.yungching.com.tw/",
+              "desc": "直營房仲，物件與成交行情",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "住商不動產",
+              "url": "https://www.hbhousing.com.tw/",
+              "desc": "加盟房仲品牌",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "台灣房屋",
+              "url": "https://www.twhg.com.tw/",
+              "desc": "直營＋加盟房仲品牌",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "中信房屋",
+              "url": "https://www.cthouse.com.tw/",
+              "desc": "加盟房仲品牌",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "東森房屋",
+              "url": "https://www.etwarm.com.tw/",
+              "desc": "加盟房仲品牌",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "21 世紀不動產",
+              "url": "https://www.century21.com.tw/",
+              "desc": "加盟房仲品牌",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "太平洋房屋",
+              "url": "https://www.pacific.com.tw/",
+              "desc": "直營＋加盟房仲品牌（太平洋建設集團）",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "有巢氏房屋",
+              "url": "https://www.u-trust.com.tw/",
+              "desc": "加盟房仲品牌（永慶房產集團）",
+              "trust": "industry",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transcripts",
+      "icon": "📜",
+      "title": "謄本與地籍",
+      "status": "live",
+      "summary": "土地／建物登記謄本、地籍圖、建物測量成果圖、公告現值與公告地價。電子謄本每張 20 元：目前導向官方系統申領；第二階段以「點數制」串接內政部共享協作平台 API，並開放上傳自購謄本自動查驗歸檔。",
+      "analysis": [
+        "所有權部：持分結構、取得原因（買賣／繼承／贈與）與日期",
+        "他項權利部：抵押權設定金額 → 推估貸款成數與屋主財務壓力",
+        "公告現值 × 面積：土地增值稅與遺產稅估算基礎"
+      ],
+      "groups": [
+        {
+          "title": "謄本申領",
+          "items": [
+            {
+              "name": "全國地政電子謄本系統",
+              "url": "https://ep.land.nat.gov.tw/",
+              "desc": "線上申領與紙本同效力的電子謄本（每張 20 元）",
+              "trust": "official",
+              "access": "paid",
+              "update": "即時",
+              "cost": "付費"
+            },
+            {
+              "name": "內政部地政司",
+              "url": "https://www.land.moi.gov.tw/",
+              "desc": "地政法令、地政電傳、謄本相關公告",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "HiNet 地政服務（地政電傳）",
+              "url": "https://www.land.nat.gov.tw/",
+              "desc": "中華電信營運：地政電傳即時查地籍資料（每筆 10 元，僅供參考）與電子謄本入口",
+              "trust": "official",
+              "access": "paid",
+              "update": "即時",
+              "cost": "付費"
+            },
+            {
+              "name": "關貿網路 地政資訊網路 e點通",
+              "url": "https://ttt.land.net.tw/APTCLN/",
+              "desc": "北北桃、臺中電子謄本與地政電傳；非會員可刷卡（每份另加 10 元）",
+              "trust": "official",
+              "access": "paid",
+              "update": "即時",
+              "cost": "付費"
+            }
+          ]
+        },
+        {
+          "title": "地籍圖與地價",
+          "items": [
+            {
+              "name": "地籍圖資網路便民服務系統",
+              "url": "https://easymap.land.moi.gov.tw/",
+              "desc": "以地號查地籍圖位置、公告土地現值、公告地價",
+              "trust": "official",
+              "access": "link",
+              "update": "每年公告",
+              "cost": "免費"
+            },
+            {
+              "name": "國土測繪圖資服務雲",
+              "url": "https://maps.nlsc.gov.tw/",
+              "desc": "地籍、地形、正射影像、門牌定位",
+              "trust": "official",
+              "access": "api",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "系統串接 API",
+          "items": [
+            {
+              "name": "地政整合資訊服務共享協作平台",
+              "url": "https://cop.land.moi.gov.tw/",
+              "desc": "內政部官方付費 API：所有權部、他項權利部、建物標示部每筆 1 元（不含私人所有權人個資）",
+              "trust": "official",
+              "access": "api",
+              "update": "即時",
+              "cost": "付費"
+            },
+            {
+              "name": "地政司開放 API",
+              "url": "https://openapi.land.moi.gov.tw/",
+              "desc": "公告地價、公告土地現值、段小段代碼（免費，政府資料開放授權）",
+              "trust": "official",
+              "access": "api",
+              "update": "每年公告",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "icon": "🗺️",
+      "title": "都市計畫與土地開發",
+      "status": "links",
+      "summary": "土地使用分區、都市計畫變更、重劃區、都市更新與危老重建。土地開發評估的第一步。",
+      "analysis": [
+        "使用分區 × 容積率 × 建蔽率：可建樓地板面積試算（第二階段工具）",
+        "都市計畫變更公告：提早掌握分區變更帶來的價值落差",
+        "重劃區、捷運場站周邊：中長期房價推升因子"
+      ],
+      "groups": [
+        {
+          "title": "土地使用分區查詢",
+          "items": [
+            {
+              "name": "全國土地使用分區資料查詢系統",
+              "url": "https://luz.nlma.gov.tw/web/",
+              "desc": "都市計畫、非都市土地、國家公園使用分區查詢（國土管理署城鄉發展分署）",
+              "trust": "official",
+              "access": "link",
+              "update": "依公告",
+              "cost": "免費"
+            },
+            {
+              "name": "內政部國土管理署",
+              "url": "https://www.nlma.gov.tw/",
+              "desc": "國土計畫、都市計畫、建築管理主管機關",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "都市更新與住宅政策",
+          "items": [
+            {
+              "name": "國家住宅及都市更新中心",
+              "url": "https://www.hurc.org.tw/",
+              "desc": "社會住宅、公辦都更、包租代管",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "building",
+      "icon": "🏗️",
+      "title": "建管執照與營建行情",
+      "status": "links",
+      "summary": "建造執照、使用執照查詢，以及營造工程物價、建材行情，用於成本估算與新案供給分析。",
+      "analysis": [
+        "建照核發量：1～3 年後的新屋供給",
+        "營造工程物價指數：營建成本走勢 → 預售屋定價壓力",
+        "使照資料：屋齡、構造、樓層、用途核對"
+      ],
+      "groups": [
+        {
+          "title": "建照與使照",
+          "items": [
+            {
+              "name": "全國建築管理資訊系統入口網",
+              "url": "https://cloudbm.nlma.gov.tw/CPTL/",
+              "desc": "國土管理署建管入口：各縣市建管系統、合格室內裝修業者等查詢",
+              "trust": "official",
+              "access": "link",
+              "update": "依核發",
+              "cost": "免費"
+            },
+            {
+              "name": "臺北市執照存根查詢系統",
+              "url": "https://img2.gov.taipei/F100/F100.aspx",
+              "desc": "以地址、地號或執照號碼查建照、使照存根影像，可免費列印",
+              "trust": "official",
+              "access": "link",
+              "update": "依核發",
+              "cost": "免費"
+            },
+            {
+              "name": "新北市建管便民服務資訊網",
+              "url": "https://building-management.publicwork.ntpc.gov.tw/",
+              "desc": "執照基本資料、使照存根、預售屋施工進度查詢",
+              "trust": "official",
+              "access": "link",
+              "update": "依核發",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "營建成本行情",
+          "items": [
+            {
+              "name": "行政院主計總處",
+              "url": "https://www.dgbas.gov.tw/",
+              "desc": "營造工程物價指數、消費者物價指數",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每月",
+              "cost": "免費"
+            },
+            {
+              "name": "行政院公共工程委員會",
+              "url": "https://www.pcc.gov.tw/",
+              "desc": "公共工程價格資料庫、工程物價資訊",
+              "trust": "official",
+              "access": "link",
+              "update": "每月",
+              "cost": "免費"
+            },
+            {
+              "name": "營造工程物價指數",
+              "url": "https://www.stat.gov.tw/Statistics.aspx?n=3906&CaN=460",
+              "desc": "主計總處編製（110 年=100），材料與勞務分類指數，可下載統計表",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每月",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law",
+      "icon": "⚖️",
+      "title": "法規與判例",
+      "status": "links",
+      "summary": "不動產相關法規全文、最新修法與實際判決。可依法條名稱或關鍵字（例如「漏水」「凶宅」「斡旋金」「定金」）查判決。",
+      "analysis": [
+        "判決關鍵字追蹤：同類糾紛的法院見解與賠償金額",
+        "修法時間軸：法規變動對交易流程的影響"
+      ],
+      "groups": [
+        {
+          "title": "法規與判決檢索",
+          "items": [
+            {
+              "name": "全國法規資料庫",
+              "url": "https://law.moj.gov.tw/",
+              "desc": "法規全文、沿革、最新異動",
+              "trust": "official",
+              "access": "link",
+              "update": "即時",
+              "cost": "免費"
+            },
+            {
+              "name": "司法院裁判書查詢",
+              "url": "https://judgment.judicial.gov.tw/FJUD/default.aspx",
+              "desc": "以關鍵字查實際判決（例：不動產經紀業管理條例、漏水 瑕疵）",
+              "trust": "official",
+              "access": "link",
+              "update": "每日",
+              "cost": "免費"
+            },
+            {
+              "name": "司法院法學資料檢索系統",
+              "url": "https://lawsearch.judicial.gov.tw/",
+              "desc": "判決、解釋、決議整合檢索",
+              "trust": "official",
+              "access": "link",
+              "update": "每日",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "常用法規",
+          "items": [
+            {
+              "name": "不動產經紀業管理條例",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060066",
+              "desc": "房仲業務、經紀人員、說明書、服務報酬",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "地政士法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060081",
+              "desc": "地政士（代書）執業規範",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "土地法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060001",
+              "desc": "地籍、土地登記、優先購買權（第 34 條之 1、104 條）",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "平均地權條例",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060009",
+              "desc": "實價登錄、預售屋禁止轉售、私法人購屋許可",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "都市計畫法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070001",
+              "desc": "都市計畫擬定、變更、使用管制",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "建築法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070109",
+              "desc": "建造執照、使用執照、違建",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "公寓大廈管理條例",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070118",
+              "desc": "管委會、共用部分、管理費",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "消費者保護法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0170001",
+              "desc": "定型化契約、審閱期",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "民法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=B0000001",
+              "desc": "買賣、居間、瑕疵擔保、繼承",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tax",
+      "icon": "💰",
+      "title": "稅務（含遺產贈與）",
+      "status": "links",
+      "summary": "房地合一稅、土地增值稅、地價稅、房屋稅（囤房稅）、契稅、遺產稅與贈與稅。以官方試算與法規為準。",
+      "analysis": [
+        "持有年限 × 房地合一稅率：最佳出售時點",
+        "繼承 vs 贈與 vs 買賣：移轉方式的稅負比較（第二階段工具）",
+        "囤房稅級距：多屋族持有成本"
+      ],
+      "groups": [
+        {
+          "title": "官方稅務入口",
+          "items": [
+            {
+              "name": "財政部稅務入口網",
+              "url": "https://www.etax.nat.gov.tw/",
+              "desc": "各稅目說明、線上試算、稅務申報",
+              "trust": "official",
+              "access": "link",
+              "update": "依公告",
+              "cost": "免費"
+            },
+            {
+              "name": "財政部",
+              "url": "https://www.mof.gov.tw/",
+              "desc": "稅制新聞、法令解釋、統計",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "稅法",
+          "items": [
+            {
+              "name": "所得稅法（房地合一）",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340003",
+              "desc": "第 4 條之 4～第 14 條之 8、第 24 條之 5 房地合一稅",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "遺產及贈與稅法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340072",
+              "desc": "遺產稅、贈與稅、免稅額與扣除額",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            },
+            {
+              "name": "土地稅法",
+              "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340096",
+              "desc": "地價稅、田賦、土地增值稅",
+              "trust": "official",
+              "access": "link",
+              "update": "依修法",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "insurance",
+      "icon": "🛡️",
+      "title": "房屋保險",
+      "status": "links",
+      "summary": "住宅火災及地震基本保險、貸款附加保險、自然災害風險。成交與貸款時的必要說明事項。",
+      "analysis": [
+        "災害潛勢 × 保額：屋主自負風險說明"
+      ],
+      "groups": [
+        {
+          "title": "保險資訊",
+          "items": [
+            {
+              "name": "財團法人住宅地震保險基金",
+              "url": "https://www.treif.org.tw/",
+              "desc": "住宅地震基本保險保額、理賠、FAQ",
+              "trust": "official",
+              "access": "link",
+              "update": "依公告",
+              "cost": "免費"
+            },
+            {
+              "name": "產物保險商業同業公會",
+              "url": "https://www.nlia.org.tw/",
+              "desc": "住宅火險、商業火險說明與保費資訊",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "金管會保險局",
+              "url": "https://www.ib.gov.tw/",
+              "desc": "保險法規、業者查詢",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economy",
+      "icon": "🏦",
+      "title": "金融與總體經濟",
+      "status": "live",
+      "summary": "利率、信用管制、景氣燈號、經濟成長與商業媒體觀點。影響購屋能力與資金流向，是房價中長期方向的關鍵。",
+      "analysis": [
+        "房貸利率 × 房價所得比：購屋負擔變化",
+        "央行選擇性信用管制：成數限制對交易量的衝擊",
+        "景氣對策信號：景氣循環位置"
+      ],
+      "groups": [
+        {
+          "title": "官方總經",
+          "items": [
+            {
+              "name": "中央銀行",
+              "url": "https://www.cbc.gov.tw/",
+              "desc": "利率決策、選擇性信用管制、五大銀行房貸利率",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每季理監事會／每月",
+              "cost": "免費"
+            },
+            {
+              "name": "國家發展委員會",
+              "url": "https://www.ndc.gov.tw/",
+              "desc": "景氣對策信號、重大計畫、國土規劃",
+              "trust": "official",
+              "access": "link",
+              "update": "每月",
+              "cost": "免費"
+            },
+            {
+              "name": "國發會 景氣對策信號",
+              "url": "https://index.ndc.gov.tw/n/zh_tw/data/eco/signal",
+              "desc": "景氣燈號與領先、同時指標，可匯出 Excel",
+              "trust": "official",
+              "access": "open-data",
+              "update": "每月",
+              "cost": "免費"
+            },
+            {
+              "name": "央行新聞稿（五大銀行新承做房貸利率）",
+              "url": "https://www.cbc.gov.tw/tw/lp-302-1.html",
+              "desc": "每月下旬發布五大銀行新承做購屋貸款利率與金額（附 XLSX）",
+              "trust": "official",
+              "access": "link",
+              "update": "每月",
+              "cost": "免費"
+            },
+            {
+              "name": "央行不動產貸款總體審慎措施",
+              "url": "https://www.cbc.gov.tw/tw/cp-1054-50564-FDFFB-1.html",
+              "desc": "選擇性信用管制等不動產貸款規範說明",
+              "trust": "official",
+              "access": "link",
+              "update": "依理監事會",
+              "cost": "免費"
+            }
+          ]
+        },
+        {
+          "title": "商業與財經媒體",
+          "items": [
+            {
+              "name": "商業周刊",
+              "url": "https://www.businessweekly.com.tw/",
+              "desc": "產業趨勢、地方發展、房地產專題",
+              "trust": "media",
+              "access": "link",
+              "update": "每週",
+              "cost": "部分付費"
+            },
+            {
+              "name": "經濟日報 房市",
+              "url": "https://money.udn.com/money/cate/5593",
+              "desc": "房市、建商、土地交易新聞",
+              "trust": "media",
+              "access": "link",
+              "update": "每日",
+              "cost": "部分付費"
+            },
+            {
+              "name": "工商時報",
+              "url": "https://www.ctee.com.tw/",
+              "desc": "產業、金融、房市新聞",
+              "trust": "media",
+              "access": "link",
+              "update": "每日",
+              "cost": "免費"
+            },
+            {
+              "name": "天下雜誌",
+              "url": "https://www.cw.com.tw/",
+              "desc": "政經趨勢、區域發展深度報導",
+              "trust": "media",
+              "access": "link",
+              "update": "每週",
+              "cost": "部分付費"
+            },
+            {
+              "name": "今周刊",
+              "url": "https://www.businesstoday.com.tw/",
+              "desc": "財經、投資、房產專題",
+              "trust": "media",
+              "access": "link",
+              "update": "每週",
+              "cost": "部分付費"
+            },
+            {
+              "name": "鉅亨網 台灣房市",
+              "url": "https://news.cnyes.com/news/cat/tw_housenews",
+              "desc": "房市、建商、推案與房貸數據新聞",
+              "trust": "media",
+              "access": "link",
+              "update": "每日",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "policy",
+      "icon": "🏛️",
+      "title": "政府政策與重大建設",
+      "status": "live",
+      "summary": "中央與地方政府的發展計畫、交通建設、產業園區。站內「每日資訊」會自動抓取相關新聞。",
+      "analysis": [
+        "捷運／鐵路新站：站點周邊 500 公尺房價變化",
+        "科學園區、產業園區：就業人口移入 → 租屋與首購需求"
+      ],
+      "groups": [
+        {
+          "title": "中央政府",
+          "items": [
+            {
+              "name": "行政院",
+              "url": "https://www.ey.gov.tw/",
+              "desc": "院會決議、重大政策",
+              "trust": "official",
+              "access": "link",
+              "update": "每週",
+              "cost": "免費"
+            },
+            {
+              "name": "內政部",
+              "url": "https://www.moi.gov.tw/",
+              "desc": "不動產、地政、國土政策新聞稿",
+              "trust": "official",
+              "access": "link",
+              "update": "每日",
+              "cost": "免費"
+            },
+            {
+              "name": "交通部鐵道局",
+              "url": "https://www.rb.gov.tw/",
+              "desc": "鐵路、捷運、高鐵延伸等軌道建設進度",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "icon": "🌏",
+      "title": "地圖與環境風險",
+      "status": "planned",
+      "summary": "土壤液化、淹水潛勢、活動斷層等環境資訊。現階段整合官方圖台；第三階段將自建「台灣不動產詳細地圖」，把成交、分區、風險疊在同一張圖上。",
+      "analysis": [
+        "物件位置 × 災害潛勢：說明義務與價格折減"
+      ],
+      "groups": [
+        {
+          "title": "環境風險圖台",
+          "items": [
+            {
+              "name": "土壤液化潛勢查詢",
+              "url": "https://www.liquid.net.tw/",
+              "desc": "經濟部地質調查及礦業管理中心土壤液化潛勢圖",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "災害潛勢地圖網站",
+              "url": "https://dmap.ncdr.nat.gov.tw/",
+              "desc": "國家災害防救科技中心：淹水、坡地、斷層等潛勢",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "經濟部地質調查及礦業管理中心",
+              "url": "https://www.gsmma.gov.tw/",
+              "desc": "地質敏感區、活動斷層",
+              "trust": "official",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pros",
+      "icon": "🤝",
+      "title": "專業人士與公會",
+      "status": "planned",
+      "summary": "地政士（代書）、估價師、室內設計師、經紀業公會。推薦名單將在第二階段開放會員推薦與評價。",
+      "analysis": [],
+      "groups": [
+        {
+          "title": "公會",
+          "items": [
+            {
+              "name": "中華民國地政士公會全國聯合會",
+              "url": "https://www.rocrea.org.tw/",
+              "desc": "地政士（代書）全國公會",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "中華民國不動產仲介經紀商業同業公會全國聯合會",
+              "url": "https://www.taiwanhouse.org.tw/",
+              "desc": "房仲業全國公會",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "中華民國不動產代銷經紀商業同業公會全國聯合會",
+              "url": "http://www.remaaroc.org.tw/",
+              "desc": "代銷業全國公會",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "中華民國不動產估價師公會全國聯合會",
+              "url": "http://www.rocreaa.org.tw/",
+              "desc": "估價師全國公會：估價師名錄、估價技術公報",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            },
+            {
+              "name": "中華民國室內設計裝修商業同業公會全國聯合會",
+              "url": "https://www.idroc.org.tw/",
+              "desc": "室內設計裝修業全國公會",
+              "trust": "industry",
+              "access": "link",
+              "update": "不定期",
+              "cost": "免費"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

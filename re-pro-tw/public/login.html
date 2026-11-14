@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>會員登入｜不動產最強工具</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/app.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <section class="auth-hero">
+      <div class="brand" style="padding:0 0 24px"><img src="/favicon.svg" alt="" /><span><strong>不動產最強工具</strong><small>RE·PRO TAIWAN</small></span></div>
+      <h1>房仲、代書、開發商的<br /><em>一站式資訊戰情室</em></h1>
+      <p>把政府、房仲平台、媒體與法規的資訊集中在同一個地方：每天自動更新，每個資料都標明來源與可信度。</p>
+      <ul>
+        <li>📈 <span>實價登錄自動匯入，各縣市、行政區單價走勢</span></li>
+        <li>📜 <span>謄本、地籍、公告現值一站查詢（點數調閱開發中）</span></li>
+        <li>📰 <span>房市、土地開發、政策、央行、稅務每日新聞彙整</span></li>
+        <li>⚖️ <span>不動產法規、判決、稅務、保險資源分類整理</span></li>
+        <li>🔗 <span>每天自動「連結確認」，失效連結會被標示出來</span></li>
+      </ul>
+    </section>
+    <section class="auth-form">
+      <div class="card">
+        <div class="tabs" role="tablist">
+          <button type="button" class="active" data-tab="login">會員登入</button>
+          <button type="button" data-tab="register">申請加入</button>
+        </div>
+        <form id="login-form">
+          <label class="field">Email<input name="email" type="email" autocomplete="username" required /></label>
+          <label class="field">密碼<input name="password" type="password" autocomplete="current-password" required /></label>
+          <div class="alert error" id="login-msg" hidden></div>
+          <button class="btn primary" type="submit">登入</button>
+          <small>本平台為會員制，僅限會員使用。</small>
+        </form>
+        <form id="register-form" hidden>
+          <div class="form-row">
+            <label class="field">姓名<input name="name" required maxlength="50" autocomplete="name" /></label>
+            <label class="field">職業<select name="profession" id="profession"></select></label>
+          </div>
+          <label class="field">公司／事務所（選填）<input name="company" maxlength="100" autocomplete="organization" /></label>
+          <label class="field">手機（選填）<input name="phone" maxlength="30" autocomplete="tel" /></label>
+          <label class="field">Email<input name="email" type="email" required autocomplete="email" /></label>
+          <label class="field">密碼（至少 8 碼，含英文與數字）<input name="password" type="password" minlength="8" required autocomplete="new-password" /></label>
+          <label class="field" id="invite-field">邀請碼（選填，有邀請碼可立即開通）<input name="invite" maxlength="40" /></label>
+          <div class="alert" id="register-msg" hidden></div>
+          <button class="btn primary" type="submit">送出申請</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="/assets/login.js"></script>
+</body>
+</html>
