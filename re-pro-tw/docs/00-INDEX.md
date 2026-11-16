@@ -37,8 +37,8 @@
 
   | 頁面 | 連結 |
   |---|---|
-  | 01 總報告企劃書 | 總部頁的子頁 |
-  | 02 目標與公司發展階段 | 總部頁的子頁 |
+  | 01 總報告企劃書 v1.0 | https://app.notion.com/p/41ac7d088a1c81549a3ddcb4a9748f7a |
+  | 02 目標與公司發展階段 | https://app.notion.com/p/41ac7d088a1c81589046d039dafa6db4 |
   | 03 系統設計圖與建置手冊 | https://app.notion.com/p/419c7d088a1c819fa83bf40ced917c5e |
   | 04 AI 員工編制與治理 | https://app.notion.com/p/419c7d088a1c8140bca5c202b57643a1 |
   | 05 除錯手冊（技能） | https://app.notion.com/p/419c7d088a1c81178f3ff5e68281df8c |
