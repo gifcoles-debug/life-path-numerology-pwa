@@ -78,13 +78,13 @@ re-pro-tw/
 
 ## 文件
 
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)：框架設計、資料流、準確度原則、發展藍圖
-- [docs/TRANSCRIPTS.md](docs/TRANSCRIPTS.md)：謄本收費與串接的查證結果，以及第二階段的做法
+- [docs/01-architecture/ARCHITECTURE.md](docs/01-architecture/ARCHITECTURE.md)：框架設計、資料流、準確度原則、發展藍圖
+- [docs/02-research/TRANSCRIPTS.md](docs/02-research/TRANSCRIPTS.md)：謄本收費與串接的查證結果，以及第二階段的做法
 
 ## 上線前必須確認
 
 1. **新聞授權。** Google 新聞 RSS 與中央社 RSS 依其條款以個人、非商業使用為主；中央社已預設關閉，經濟日報 RSS 的條款則沒有查到。本站要向會員收費，正式收費前請確認授權，或改用已取得授權的來源。系統只存標題與原文連結，不轉載內文。
-2. **謄本。** 目前沒有任何官方管道能讓第三方平台替會員調出具法律效力的完整謄本，詳見 `docs/TRANSCRIPTS.md`。
+2. **謄本。** 目前沒有任何官方管道能讓第三方平台替會員調出具法律效力的完整謄本，詳見 `docs/02-research/TRANSCRIPTS.md`。
 3. **規費與網址。** 都是 2026-11 依官方公開資訊查證的；正式收費前請再到官網確認一次。
 4. **個資。** 會員資料、謄本需求單都屬個人資料，正式營運需要隱私權政策與會員條款。
 

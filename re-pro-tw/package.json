@@ -15,7 +15,8 @@
     "check-links": "node --disable-warning=ExperimentalWarning scripts/run-job.js linkcheck",
     "update-news": "node --disable-warning=ExperimentalWarning scripts/run-job.js news",
     "import-lvr": "node --disable-warning=ExperimentalWarning scripts/run-job.js lvr",
-    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.js'"
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.js'",
+    "doctor": "node --disable-warning=ExperimentalWarning scripts/doctor.js"
   },
   "dependencies": {
     "adm-zip": "^0.6.1",
